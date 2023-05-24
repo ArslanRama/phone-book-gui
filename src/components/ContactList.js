@@ -10,12 +10,12 @@ const ContactList = ({ searchResults }) => {
           {searchResults.map((contact) => (
             <ListItem className="listItem" key={contact.id}>
               <ListItemText
-                primary={contact.name}
+                primary={
+                  <Typography variant="body1" className="listItemPrimary">
+                    {contact.name}
+                  </Typography>
+                }
                 secondary={contact.phone}
-                classes={{
-                  primary: 'listItemPrimary',
-                  secondary: 'listItemSecondary',
-                }}
               />
             </ListItem>
           ))}
