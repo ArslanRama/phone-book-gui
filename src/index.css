@@ -1,13 +1,59 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Add responsive styles for different screen sizes */
+@media (max-width: 600px) {
+  /* Styles for screens up to 600px wide */
+  body {
+    font-size: 14px;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@media (min-width: 601px) and (max-width: 1024px) {
+  /* Styles for screens between 601px and 1024px wide */
+  body {
+    font-size: 16px;
+  }
 }
+
+@media (min-width: 1025px) {
+  /* Styles for screens larger than 1024px wide */
+  body {
+    font-size: 18px;
+  }
+}
+
+/* Add Material-UI styles */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Add user-friendly and colorful styles for the contact list */
+.listItem {
+  background-color: #f2f2f2;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.listItem:hover {
+  background-color: #e0e0e0;
+}
+
+.listItemPrimary {
+  color: #333;
+  font-weight: bold;
+}
+
+.listItemSecondary {
+  color: #777;
+}
+
+.noResultsText {
+  color: #777;
+  text-align: center;
+}
+
+/* Add additional responsive and styling styles as needed */

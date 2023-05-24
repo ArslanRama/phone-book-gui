@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { TextField, Typography } from '@material-ui/core';
+import { TextField, Container } from '@material-ui/core';
 import { Search as SearchIcon } from '@material-ui/icons';
 import data from './data/phoneBook.json';
 import ContactList from './components/ContactList';
+import './index.css';
+
 
 
 // import ContactList and pass the searchResults state as a prop to it. 
@@ -22,7 +24,7 @@ const App = () => {
   };
 
   return (
-    <div>
+    <Container className= "container">
       <TextField
         label="Search by Name"
         value={searchTerm}
@@ -36,7 +38,7 @@ const App = () => {
       />
 
       <ContactList searchResults={searchResults} />
-    </div>
+    </Container>
   );
 };
 

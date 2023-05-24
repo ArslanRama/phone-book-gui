@@ -1,25 +1,27 @@
 import React from 'react';
 import { List, ListItem, ListItemText, Typography } from '@material-ui/core';
+import '../index.css';
 
-
-// create a functional component that receives searchResults as a prop. 
-// render the contact list based on the provided search results.
 const ContactList = ({ searchResults }) => {
   return (
     <>
       {searchResults.length > 0 ? (
         <List>
           {searchResults.map((contact) => (
-            <ListItem key={contact.id}>
+            <ListItem className="listItem" key={contact.id}>
               <ListItemText
                 primary={contact.name}
                 secondary={contact.phone}
+                classes={{
+                  primary: 'listItemPrimary',
+                  secondary: 'listItemSecondary',
+                }}
               />
             </ListItem>
           ))}
         </List>
       ) : (
-        <Typography variant="body1" align="center">
+        <Typography variant="body1" className="noResultsText" align="center">
           No results found.
         </Typography>
       )}
