@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+# Phone Book GUI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project implements an attractive graphical user interface (GUI) for searching contacts in a phone book. The GUI allows users to enter a search term and displays matching results from the phone book, including the complete name and telephone number of each contact.
 
-## Available Scripts
+## Technologies Used
 
-In the project directory, you can run:
+- JavaScript
+- React
+- Material UI
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Free text field for entering search terms
+- Case-insensitive search
+- Responsive design for seamless experience across devices
+- Optional client-server architecture
+- JSON file as the data source for the phone book
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Prerequisites
 
-### `npm test`
+- Node.js (version 14.0.0 or above)
+- Git
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+To get started with the application, follow these steps:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```bash
+   git clone https://github.com/your-username/phone-book.git
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Change to the project directory:
 
-### `npm run eject`
+   ```bash
+   cd phone-book
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Install the dependencies:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```bash
+   npm install
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. Start the application:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   ```bash
+   npm start
+   ```
 
-## Learn More
+5. Open your web browser and navigate to `http://localhost:3000` to access the application.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The project structure is organized as follows:
 
-### Code Splitting
+```
+phone-book/
+├── public/
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   └── ContactList.js
+│   ├── data/
+│   │   └── phoneBook.json
+│   ├── App.js
+│   ├── index.js
+│   └── index.css
+├── .gitignore
+├── package.json
+└── README.md
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- The `public` directory contains the HTML template for the application.
+- The `src` directory contains the main source code.
+- The `components` directory holds the React components used in the application.
+- The `data` directory contains the `phoneBook.json` file, which serves as the data source.
+- `App.js` is the main component that renders the user interface.
+- `index.js` is the entry point of the application.
+- `index.css` contains the styling for the application.
+- `.gitignore` specifies files and directories to ignore when committing changes to Git.
+- `package.json` lists the project dependencies and provides scripts for running the application.
 
-### Analyzing the Bundle Size
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Enter the name you want to search for in the provided free text field.
+2. As you type, the application will check the phone book for matches, ignoring case differences.
+3. The matching results will be displayed below the text field, showing the complete name and telephone number of each contact.
 
-### Making a Progressive Web App
+## Client-Server Architecture
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The application can optionally be used in a client-server architecture. In this case, the phone book data is stored on the server, and the frontend application queries the server for search results during runtime. To implement this architecture, you will need to set up a backend server that exposes an API endpoint for searching the phone book.
 
-### Advanced Configuration
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This project is licensed under the [MIT License](LICENSE).
 
-### Deployment
+## Acknowledgements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- [React](https://reactjs.org/)
+- [Material-UI](https://material-ui.com/)
+- [Node.js](https://nodejs.org/)
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Note:** The phone book data provided in the `phoneBook.json` file is for demonstration purposes only. Feel free to replace it with your own data or modify it as needed.

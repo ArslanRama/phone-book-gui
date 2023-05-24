@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { TextField, Typography } from '@material-ui/core';
+import { Search as SearchIcon } from '@material-ui/icons';
+import data from './data/phoneBook.json';
+import ContactList from './components/ContactList';
 
-function App() {
+
+// import ContactList and pass the searchResults state as a prop to it. 
+// the handleSearchChange function handles the search logic 
+// the search results are passed down to ContactList for rendering.
+const App = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
+
+  const handleSearchChange = (event) => {
+    const term = event.target.value.toLowerCase();
+    setSearchTerm(term);
+    const results = data.filter(
+      (contact) => contact.name.toLowerCase().includes(term)
+    );
+    setSearchResults(results);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <TextField
+        label="Search by Name"
+        value={searchTerm}
+        onChange={handleSearchChange}
+        variant="outlined"
+        margin="normal"
+        fullWidth
+        InputProps={{
+          startAdornment: <SearchIcon />,
+        }}
+      />
+
+      <ContactList searchResults={searchResults} />
     </div>
   );
-}
+};
 
 export default App;
