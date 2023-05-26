@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const port = 3001; // Replace with your desired port number
-const phoneBookData = require('../frontend/src/data/phoneBook.json'); // Assuming you have phone book data stored in a separate file
+const phoneBookData = require('./data/phoneBook.json'); // Assuming you have phone book data stored in a separate file
 
 app.use(cors());
 app.use(express.json());
