@@ -51,37 +51,39 @@ const PhoneBook = () => {
   return (
     <div className="phonebook-container">
       <h1 className="title">Phone Book</h1>
-      <div className="search-bar">
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              className="searchField"
-              label="Search"
-              value={searchTerm}
-              onChange={handleSearchChange}
-              fullWidth
-            />
-            <List>
-              {filteredData.length > 0 ? (
-                filteredData.map((entry) => (
-                  <ListItem key={entry.name} className="listItem">
-                    <ListItemText
-                      primary={entry.name}
-                      secondary={entry.phone}
-                      classes={{
-                        primary: "listItemPrimary",
-                        secondary: "listItemSecondary",
-                      }}
-                    />
-                  </ListItem>
-                ))
-              ) : (
-                <p className="noResultsText">No results found.</p>
-              )}
-            </List>
-          </Grid>
+      <Grid container spacing={2} justifyContent="center">
+        <Grid item xs={12} sm={6}>
+          <TextField
+            className="searchField"
+            label="Search"
+            value={searchTerm}
+            onChange={handleSearchChange}
+            fullWidth
+          />
+          <List>
+            {filteredData.map((entry) => (
+              <ListItem key={entry.name} className="listItem">
+                <ListItemText
+                  primary={entry.name}
+                  secondary={entry.phone}
+                  classes={{
+                    primary: "listItemPrimary",
+                    secondary: "listItemSecondary",
+                  }}
+                />
+              </ListItem>
+            ))}
+            {filteredData.length === 0 && searchTerm.length > 0 && (
+              <ListItem>
+                <ListItemText
+                  primary="No results found."
+                  className="noResultsText"
+                />
+              </ListItem>
+            )}
+          </List>
         </Grid>
-      </div>
+      </Grid>
     </div>
   );
 };
