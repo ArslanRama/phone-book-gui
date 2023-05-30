@@ -57,7 +57,7 @@ The project structure is organized as follows:
 
 ```
 Phone-Book-GUI
-├── Frontend/
+├── frontend/
 │   ├── public/
 │   │   └── index.html
 │   ├── src/
@@ -68,7 +68,7 @@ Phone-Book-GUI
 │   ├── .gitignore
 │   ├── package.json
 │   └── README.md
-├── Backend/
+├── server/
 │   ├── data/
 │   │   └── phonebook.json
 │   ├── .gitignore
@@ -85,7 +85,7 @@ Sure! Here's the description in Markdown format:
 **Frontend directory:**
 The Frontend directory contains the frontend code. Inside it, the `public` directory holds the `index.html` file, and the `src` directory contains the `components` directory where your React components are located, along with `Phonebook.css` for styling. The `App.js` file is the main component, and `index.js` is the entry point of the application.
 
-**Backend directory:**
+**Backend(server) directory:**
 The Backend directory contains the backend code. The `data` directory holds the `phonebook.json` file as the data source. Inside the `server` directory, you can put your backend server file (`server.js`). Additionally, there is a `setupProxy.js` file that can be used for proxying requests from the frontend to the backend during development.
 
 **Both frontend and backend directories:**
